@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Member Directory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── AUTH PAGES ── -->
+<div id="auth-pages">
+
+  <!-- Login -->
+  <div id="login-page" class="auth-page">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h1>Team Directory</h1>
+        <p>Manage your team members</p>
+      </div>
+      <h2>Welcome back</h2>
+      <div id="login-alert" class="alert alert-error"></div>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email address</label>
+          <input type="email" id="login-email" placeholder="you@company.com" autocomplete="email" />
+          <span class="error-msg">Please enter a valid email.</span>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" />
+            <button type="button" class="toggle-password" data-target="login-password">
+              <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </button>
+          </div>
+          <span class="error-msg">Password is required.</span>
+        </div>
+        <button type="submit" class="btn btn-primary" id="login-btn">
+          <span>Sign In</span>
+        </button>
+      </form>
+      <div class="auth-switch">Don't have an account? <a href="#" id="go-signup">Sign up</a></div>
+    </div>
+  </div>
+
+  <!-- Signup -->
+  <div id="signup-page" class="auth-page" style="display:none;">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h1>Team Directory</h1>
+        <p>Manage your team members</p>
+      </div>
+      <h2>Create account</h2>
+      <div id="signup-alert" class="alert alert-error"></div>
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="signup-name">Full name</label>
+          <input type="text" id="signup-name" placeholder="John Doe" autocomplete="name" />
+          <span class="error-msg">Name is required.</span>
+        </div>
+        <div class="form-group">
+          <label for="signup-email">Email address</label>
+          <input type="email" id="signup-email" placeholder="you@company.com" autocomplete="email" />
+          <span class="error-msg">Please enter a valid email.</span>
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="signup-password" placeholder="Min. 6 characters" autocomplete="new-password" />
+            <button type="button" class="toggle-password" data-target="signup-password">
+              <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </button>
+          </div>
+          <div class="strength-bar">
+            <span id="sb1"></span><span id="sb2"></span><span id="sb3"></span><span id="sb4"></span>
+          </div>
+          <div class="strength-label" id="strength-label"></div>
+          <span class="error-msg">Password must be at least 6 characters.</span>
+        </div>
+        <div class="form-group">
+          <label for="signup-confirm">Confirm Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="signup-confirm" placeholder="Re-enter your password" autocomplete="new-password" />
+            <button type="button" class="toggle-password" data-target="signup-confirm">
+              <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </button>
+          </div>
+          <span class="error-msg">Passwords do not match.</span>
+        </div>
+        <button type="submit" class="btn btn-primary" id="signup-btn">
+          <span>Create Account</span>
+        </button>
+      </form>
+      <div class="auth-switch">Already have an account? <a href="#" id="go-login">Sign in</a></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── MAIN APP ── -->
+<div id="app">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="navbar-brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      </div>
+      <span>Team Directory</span>
+    </a>
+    <div class="navbar-right">
+      <div class="user-badge">
+        <div class="avatar-sm" id="nav-avatar">U</div>
+        <span id="nav-username">User</span>
+      </div>
+      <!-- Dark Mode Toggle -->
+      <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode">
+        <span class="theme-option active" id="theme-opt-light">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41l-1.06-1.06zm1.06-12.37l-1.06 1.06a.996.996 0 0 0 0 1.41c.39.39 1.03.39 1.41 0l1.06-1.06a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0zM7.05 18.36l-1.06 1.06a.996.996 0 0 0 0 1.41c.39.39 1.03.39 1.41 0l1.06-1.06a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0z"/></svg>
+          Light
+        </span>
+        <span class="theme-option" id="theme-opt-dark">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+          Dark
+        </span>
+      </button>
+      <button class="btn-logout" id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="page-header">
+      <div>
+        <h2>Team Members</h2>
+        <p>Manage and view all team members</p>
+      </div>
+      <button class="btn btn-primary" id="add-member-btn" style="width:auto;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        Add Member
+      </button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-bar" id="stats-bar">
+      <div class="stat-card">
+        <div class="stat-icon purple">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <div><div class="stat-value" id="stat-total">0</div><div class="stat-label">Total Members</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <div><div class="stat-value" id="stat-active">0</div><div class="stat-label">Active</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon red">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        </div>
+        <div><div class="stat-value" id="stat-inactive">0</div><div class="stat-label">Inactive</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon yellow">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+        </div>
+        <div><div class="stat-value" id="stat-depts">0</div><div class="stat-label">Departments</div></div>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="search-box">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" id="search-input" placeholder="Search by name, role, or department..." />
+      </div>
+      <select class="filter-select" id="dept-filter">
+        <option value="">All Departments</option>
+      </select>
+      <select class="filter-select" id="status-filter">
+        <option value="">All Status</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      <div class="view-toggle">
+        <button id="grid-view-btn" class="active" title="Grid view">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z"/></svg>
+        </button>
+        <button id="list-view-btn" title="List view">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Members Grid -->
+    <div id="members-grid" class="members-grid"></div>
+    <!-- Members List -->
+    <div id="members-list" class="members-list"></div>
+    <!-- Empty State -->
+    <div id="empty-state" class="empty-state" style="display:none;">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      <h3>No members found</h3>
+      <p>Try adjusting your search or filters, or add a new member.</p>
+    </div>
+  </main>
+</div>
+
+<!-- ── MODALS ── -->
+
+<!-- Add/Edit Member Modal -->
+<div class="modal-overlay" id="member-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="member-modal-title">Add Member</h3>
+      <button class="modal-close" data-close="member-modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div id="member-form-alert" class="alert alert-error"></div>
+      <form id="member-form">
+        <input type="hidden" id="member-id" />
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;" id="member-form-grid">
+          <div class="form-group">
+            <label for="m-name">Full Name *</label>
+            <input type="text" id="m-name" placeholder="Alice Johnson" />
+            <span class="error-msg">Name is required.</span>
+          </div>
+          <div class="form-group">
+            <label for="m-email">Email *</label>
+            <input type="email" id="m-email" placeholder="alice@company.com" />
+            <span class="error-msg">Valid email is required.</span>
+          </div>
+          <div class="form-group">
+            <label for="m-role">Role *</label>
+            <input type="text" id="m-role" placeholder="Frontend Developer" />
+            <span class="error-msg">Role is required.</span>
+          </div>
+          <div class="form-group">
+            <label for="m-department">Department *</label>
+            <input type="text" id="m-department" placeholder="Engineering" />
+            <span class="error-msg">Department is required.</span>
+          </div>
+          <div class="form-group">
+            <label for="m-phone">Phone</label>
+            <input type="text" id="m-phone" placeholder="+63 912 345 6789" />
+          </div>
+          <div class="form-group">
+            <label for="m-status">Status</label>
+            <select id="m-status">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Profile Photo</label>
+          <div class="avatar-upload">
+            <div class="avatar-preview" id="avatar-preview">
+              <img id="avatar-preview-img" src="" alt="" style="display:none;" />
+              <div class="avatar-placeholder" id="avatar-placeholder">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                <span>Upload Photo</span>
+              </div>
+              <div class="avatar-overlay">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                <span>Change</span>
+              </div>
+              <input type="file" id="m-avatar-file" accept="image/*" style="display:none;" />
+            </div>
+            <div class="avatar-upload-info">
+              <p>Click to upload a photo</p>
+              <p class="muted">JPG, PNG, GIF — max 2MB</p>
+              <div class="form-group" style="margin:0.6rem 0 0;">
+                <input type="url" id="m-avatar" placeholder="Or paste an image URL..." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" data-close="member-modal">Cancel</button>
+      <button class="btn btn-primary" id="save-member-btn" style="width:auto;">Save Member</button>
+    </div>
+  </div>
+</div>
+
+<!-- View Member Detail Modal -->
+<div class="modal-overlay" id="detail-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Member Details</h3>
+      <button class="modal-close" data-close="detail-modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="detail-modal-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" data-close="detail-modal">Close</button>
+      <button class="btn btn-primary" id="detail-edit-btn" style="width:auto;">Edit Member</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Delete Modal -->
+<div class="modal-overlay" id="confirm-modal">
+  <div class="modal" style="max-width:400px;">
+    <div class="modal-body confirm-modal">
+      <div class="confirm-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+      </div>
+      <h3>Delete Member</h3>
+      <p>Are you sure you want to delete <strong id="confirm-member-name"></strong>? This action cannot be undone.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" data-close="confirm-modal">Cancel</button>
+      <button class="btn btn-danger" id="confirm-delete-btn" style="width:auto;">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toast-container"></div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/members.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

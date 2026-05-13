@@ -66,17 +66,17 @@ JSON_SERVER_URL=http://localhost:3001
 ```
 
 ### 3. Start JSON Server (Terminal 1)
-
 ```bash
 cd backend
 npx json-server --watch ../db.json --port 3001
 ```
 
 ### 4. Start Express Server (Terminal 2)
-
 ```bash
 cd backend
 npm start
+
+
 # or for development with auto-reload:
 npm run dev
 ```
@@ -92,7 +92,7 @@ Visit: [http://localhost:3000](http://localhost:3000)
 |--------|----------|-------------|---------------|
 | POST | /api/auth/signup | Register new user | No |
 | POST | /api/auth/login | Login | No |
-| GET | /api/auth/me | Get current user | Yes |
+| GET | /api/auth/logout | Get current user | Yes |
 
 ### Members
 | Method | Endpoint | Description | Auth Required |

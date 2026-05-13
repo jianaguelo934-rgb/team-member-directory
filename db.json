@@ -5,6 +5,12 @@
       "email": "jed@gmail.com",
       "password": "$2a$10$lLjX59zt.CtKLC4sagS1k.iF4yj4OQpCCoyVaAmjwaR5IjjZv9Rwa",
       "id": 1
+    },
+    {
+      "name": "Jian Aguelo",
+      "email": "jianaguelo934@gmail.com",
+      "password": "$2a$10$zEiXA.L7Eh5ljXchZpNLf.KBM1pxTFJe/Xjhqdw9cNvw8NZrgU3hu",
+      "id": 2
     }
   ],
   "members": [
